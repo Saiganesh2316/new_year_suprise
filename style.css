@@ -1,0 +1,154 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  overflow: hidden;
+
+  font-family: "Cormorant Garamond", serif;
+  background: url("./background.jpg") center / cover no-repeat;
+  color: #4A2E2A;
+}
+
+/* center screens */
+body {
+  display: grid;
+  place-items: center;
+  text-align: center;
+}
+
+/* screens */
+.screen {
+  display: none;
+  max-width: 560px;
+  padding: 28px;
+}
+
+.screen.active {
+  display: block;
+}
+
+/* text */
+p {
+  font-size: 18px;
+  line-height: 1.8;
+  margin-bottom: 16px;
+}
+
+/* buttons */
+button {
+  font-family: "Libre Baskerville", serif;
+  font-size: 15px;
+  letter-spacing: 0.6px;
+
+  background: transparent;
+  color: #7A3A36;
+
+  border: 1.5px solid #7A3A36;
+  border-radius: 26px;
+
+  padding: 14px 36px;
+  margin: 10px;
+
+  cursor: pointer;
+  transition: all 0.2s ease;
+  -webkit-tap-highlight-color: transparent;
+}
+
+button:hover,
+button:active {
+  background: #7A3A36;
+  color: #FFF8F4;
+}
+
+/* images */
+img {
+  max-width: 100%;
+  border-radius: 6px;
+}
+
+/* ===== SCREEN 3 SLIDER ===== */
+
+#screen3 {
+  padding: 0;
+}
+
+#screen3 p {
+  padding: 0 24px;
+}
+
+/* slider */
+.media-scroll {
+  display: flex;
+  width: 100%;
+  height: 280px;
+
+  overflow-x: auto;
+  overflow-y: hidden;
+
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  touch-action: pan-x;
+}
+
+/* items */
+.media-scroll img,
+.media-scroll video {
+  flex: 0 0 100%;
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+  border-radius: 12px;
+  scroll-snap-align: center;
+}
+
+/* ===== SCREEN 4 LETTER ===== */
+
+#screen4 {
+  padding: 24px;
+}
+
+.letter-box {
+  max-height: 70vh;
+  overflow-y: auto;
+  padding: 24px;
+
+  background: rgba(255, 248, 244, 0.6);
+  backdrop-filter: blur(4px);
+
+  border-radius: 16px;
+  text-align: left;
+
+  scrollbar-width: thin;
+}
+
+/* subtle scrollbar */
+.letter-box::-webkit-scrollbar {
+  width: 4px;
+}
+
+.letter-box::-webkit-scrollbar-thumb {
+  background: rgba(122, 58, 54, 0.4);
+  border-radius: 4px;
+}
+
+/* ===== Screen 4 soft fade-in ===== */
+#screen4.active {
+  animation: screenFade 0.9s ease forwards;
+}
+
+@keyframes screenFade {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
